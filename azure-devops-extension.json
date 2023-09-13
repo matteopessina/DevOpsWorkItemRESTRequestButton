@@ -1,9 +1,9 @@
 {
     "manifestVersion": 1.0,
     "id": "RESTRequestButton",
-    "publisher": "Apodemus",
+    "publisher": "matteopessina",
     "version": "1.0.110",
-    "public": true,
+    "public": false,
     "name": "Work Item REST Request Button",
     "description": "Adds a custom control with a button that sends a REST request.",
     "categories": [
