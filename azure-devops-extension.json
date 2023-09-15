@@ -1,11 +1,11 @@
 {
     "manifestVersion": 1.0,
-    "id": "RESTRequestButton",
+    "id": "WorkItemControlCollections",
     "publisher": "matteopessina",
-    "version": "1.0.110",
+    "version": "1.1.0",
     "public": false,
-    "name": "Work Item REST Request Button",
-    "description": "Adds a custom control with a button that sends a REST request.",
+    "name": "Work Item Control Collections",
+    "description": "Provide many custom controls.",
     "categories": [
         "Azure Boards"
     ],
@@ -38,25 +38,26 @@
     ],
     "links": {
         "home": {
-            "uri": "https://github.com/Zt-freak/DevOpsWorkItemRESTRequestButton"
+            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton"
         },
         "learn": {
-            "uri": "https://github.com/Zt-freak/DevOpsWorkItemRESTRequestButton"
+            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton"
         },
         "repository": {
-            "uri": "https://github.com/Zt-freak/DevOpsWorkItemRESTRequestButton"
+            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton"
         },
         "issues": {
-            "uri": "https://github.com/Zt-freak/DevOpsWorkItemRESTRequestButton/issues"
+            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton/issues"
         },
         "support": {
-            "uri": "https://github.com/Zt-freak/DevOpsWorkItemRESTRequestButton/issues"
+            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton/issues"
         }
     },
     "tags": [
         "Work Items",
         "Extensions",
         "Work Item Control",
-        "REST"
+        "Yaml Pipelines",
+        "Deployments"
     ]
 }
