@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import * as SDK from "azure-devops-extension-sdk"
 import { IWorkItemFormService, WorkItemTrackingServiceIds, WorkItemOptions } from "azure-devops-extension-api/WorkItemTracking"
 
-import "./RestRequestButton.scss"
+import "./RESTRequestButton.scss"
 
 import { Button } from "azure-devops-ui/Button"
 
 import { showRootComponent } from "../../Common"
 
-class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: string, statusColor: string, message: string | undefined, responseBody: string | undefined}> {
+class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: string, statusColor: string, message: string | undefined, responseBody: string | undefined }> {
 
     constructor(props: {}) {
         super(props)
@@ -23,13 +23,13 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
 
     public componentDidMount() {
         SDK.init()
-        .then( () => {
-            SDK.register(SDK.getContributionId(), () => {
-                return {
-                    
-                }
+            .then(() => {
+                SDK.register(SDK.getContributionId(), () => {
+                    return {
+
+                    }
+                })
             })
-        })
 
         SDK.ready().then(
             () => {
@@ -53,7 +53,7 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
                     }}
                     iconProps={{
                         iconName: this.state.buttonIcon,
-                        style: {color: this.state.statusColor}
+                        style: { color: this.state.statusColor }
                     }}
                     onClick={() => this.clickEvent()}
                     className="button"
@@ -66,7 +66,7 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
     }
 
     private async clickEvent() {
-        const fields : Array<string> = SDK.getConfiguration().witInputs["Fields"].split(",")
+        const fields: Array<string> = SDK.getConfiguration().witInputs["Fields"].split(",")
         const endpoint: string = SDK.getConfiguration().witInputs["Endpoint"]
 
         this.setState({
@@ -80,9 +80,9 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
             WorkItemTrackingServiceIds.WorkItemFormService
         )
 
-        const fieldValues : Promise<{[fieldName: string]: Object}> = workItemFormService.getFieldValues(fields, options)
+        const fieldValues: Promise<{ [fieldName: string]: Object }> = workItemFormService.getFieldValues(fields, options)
         fieldValues
-            .then( async data => {
+            .then(async data => {
 
                 // set Sender
 
@@ -130,15 +130,15 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
                                 if (SDK.getConfiguration().witInputs["ShowErrorAlertBox"] == undefined || SDK.getConfiguration().witInputs["ShowErrorAlertBox"].toString().toLowerCase() == "true")
                                     alert(`${responseText}`)
                             }
-                                
+
                             this.setState({
                                 message: `${response.status} - ${response.statusText}`
                             })
 
-                            if (response.body !== null){
+                            if (response.body !== null) {
                                 try {
-                                    responseText = JSON.stringify(JSON.parse(responseText), null, 2); 
-                                } catch (e) {}
+                                    responseText = JSON.stringify(JSON.parse(responseText), null, 2);
+                                } catch (e) { }
 
                                 this.setState({
                                     responseBody: SDK.getConfiguration().witInputs["ShowResponseBody"] == undefined || SDK.getConfiguration().witInputs["ShowResponseBody"].toString().toLowerCase() != "false" ? responseText : ""
@@ -163,8 +163,8 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
             })
     }
 
-    private async buildConfiguration(body: object) : Promise<RequestInit> {
-        let requestConfig: RequestInit =  new RequestConfig();
+    private async buildConfiguration(body: object): Promise<RequestInit> {
+        let requestConfig: RequestInit = new RequestConfig();
 
         const method: string = SDK.getConfiguration().witInputs["Method"]
         if (method != null && method != undefined)
@@ -181,7 +181,7 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
         const credentials: string = SDK.getConfiguration().witInputs["Credentials"]
         if (credentials != null && credentials != undefined)
             requestConfig.credentials = credentials as RequestCredentials
-        
+
         const redirect: string = SDK.getConfiguration().witInputs["Redirect"]
         if (redirect != null && redirect != undefined)
             requestConfig.redirect = redirect as RequestRedirect
@@ -210,11 +210,11 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
         return requestConfig
     }
 
-    private buildUri(endpoint: string, body: object) : string {
+    private buildUri(endpoint: string, body: object): string {
         let getParams: string = ""
 
         const method: string = SDK.getConfiguration().witInputs["Method"]
-        switch(method) {
+        switch (method) {
             case null:
             case undefined:
             case "GET":
@@ -226,7 +226,7 @@ class RESTRequestButton extends Component<{}, { buttonText: string, buttonIcon: 
                 break
         }
 
-        if(endpoint.includes('?'))
+        if (endpoint.includes('?'))
             return `${endpoint}&${getParams}`
         else
             return `${endpoint}?${getParams}`
