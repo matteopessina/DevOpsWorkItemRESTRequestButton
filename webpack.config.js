@@ -14,7 +14,8 @@ fs.readdirSync(ComponentsDir).filter(dir => {
 module.exports = {
     entry: entries,
     output: {
-        filename: "[name]/[name].js"
+        filename: "[name]/[name].js",
+        publicPath: "/dist/"
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
@@ -51,9 +52,16 @@ module.exports = {
     },
     plugins: [
         new CopyWebpackPlugin({
-           patterns: [ 
-               { from: "**/*.html", context: "src/Components" }
-           ]
+            patterns: [
+                { from: "**/*.html", context: "src/Components" }
+            ]
         })
-    ]
+    ],
+    devtool: "inline-source-map",
+    devServer: {
+        static: './dist',
+        https: false,
+        port: 3001,
+        host: '0.0.0.0'
+    }
 };

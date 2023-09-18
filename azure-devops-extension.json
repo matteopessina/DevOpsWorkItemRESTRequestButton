@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "WorkItemControlCollections",
     "publisher": "matteopessina",
-    "version": "1.1.0",
+    "version": "1.1.2",
     "public": false,
     "name": "Work Item Control Collections",
     "description": "Provide many custom controls.",
