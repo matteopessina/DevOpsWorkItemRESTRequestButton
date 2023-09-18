@@ -1,5 +1,5 @@
 {
     "id": "WorkItemControlCollections-dev",
     "public": false,
-    "baseUri": "http://localhost:3001"
+    "baseUri": "https://localhost:3001"
 }

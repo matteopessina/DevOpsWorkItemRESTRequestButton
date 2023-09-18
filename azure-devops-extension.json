@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "WorkItemControlCollections",
     "publisher": "matteopessina",
-    "version": "1.1.2",
+    "version": "1.1.7",
     "public": false,
     "name": "Work Item Control Collections",
     "description": "Provide many custom controls.",
@@ -14,10 +14,6 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
-    "icons": {
-        "default": "restbutton-128.png",
-        "large": "restbutton-512.png"
-    },
     "content": {
         "details": {
             "path": "README.md"

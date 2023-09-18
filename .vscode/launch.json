@@ -8,7 +8,7 @@
             "name": "Launch Firefox",
             "type": "firefox",
             "request": "launch",
-            "url": "http://localhost:3001/",
+            "url": "https://localhost:3001/dist/DeploymentControl2/DeploymentControl2.html",
             "reAttach": true,
             "pathMappings": [
                 {
