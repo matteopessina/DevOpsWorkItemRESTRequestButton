@@ -19,8 +19,8 @@
     "build": "npm run compile",
     "build:dev": "npm run compile:dev && npm run postbuild",
     "postbuild": "npm run package-extension -- --rev-version --overrides-file src/dev.json",
-    "package-extension": "tfx extension create --manifest-globs azure-devops-extension.json src/Components/**/*.json",
-    "publish-extension": "tfx extension publish --manifest-globs azure-devops-extension.json src/Components/**/*.json"
+    "package-extension": "tfx extension create --manifest-globs azure-devops-extension.json src/Components/**/*.json --output-path output",
+    "publish-extension": "tfx extension publish --manifest-globs azure-devops-extension.json src/Components/**/*.json --output-path output"
   },
   "dependencies": {
     "azure-devops-extension-api": "~2.225.0",
