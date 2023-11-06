@@ -30,7 +30,8 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader"
+                loader: "ts-loader",
+                exclude: /node_modules/
             },
             {
                 test: /\.s[ac]ss?$/,
@@ -47,7 +48,12 @@ module.exports = {
             {
                 test: /\.html?$/,
                 loader: "file-loader"
-            }
+            },
+            { 
+                test: /\.js$/,
+                enforce: 'pre',
+                loader: 'source-map-loader'
+            },
         ]
     },
     plugins: [
@@ -59,8 +65,11 @@ module.exports = {
     ],
     devtool: "inline-source-map",
     devServer: {
-        https: true,
+        server: "https",
         port: 3001,
         host: '0.0.0.0'
+    },
+    optimization: {
+        minimize: false
     }
 };
