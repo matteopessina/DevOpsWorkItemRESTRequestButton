@@ -1,11 +1,11 @@
 {
     "manifestVersion": 1.0,
-    "id": "WorkItemControlCollections",
+    "id": "deploymentcontrol2",
     "publisher": "matteopessina",
     "version": "1.1.8",
     "public": false,
-    "name": "Work Item Control Collections",
-    "description": "Provide many custom controls.",
+    "name": "DeploymentControl2",
+    "description": "Provide DeploymentControl2.",
     "categories": [
         "Azure Boards"
     ],
@@ -34,23 +34,6 @@
             "addressable": true
         }
     ],
-    "links": {
-        "home": {
-            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton"
-        },
-        "learn": {
-            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton"
-        },
-        "repository": {
-            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton"
-        },
-        "issues": {
-            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton/issues"
-        },
-        "support": {
-            "uri": "https://github.com/matteopessina/DevOpsWorkItemRESTRequestButton/issues"
-        }
-    },
     "tags": [
         "Work Items",
         "Extensions",

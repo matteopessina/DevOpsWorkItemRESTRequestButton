@@ -11,8 +11,5 @@
                 "uri": "dist/DeploymentControl2/DeploymentControl2.html"
             }
         }
-    ],
-    "scopes": [
-        "vso.work"
     ]
 }
